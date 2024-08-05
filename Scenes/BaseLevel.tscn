@@ -119,6 +119,7 @@ progress = 20.0
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
 
-[node name="TurretManager" type="Node3D" parent="."]
+[node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("5_xapjd")
 turret = ExtResource("6_rdr20")
+enemy_path = NodePath("../Path3D")
