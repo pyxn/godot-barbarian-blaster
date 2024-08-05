@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://75h7a27ikuk1"]
+[gd_scene load_steps=10 format=3 uid="uid://75h7a27ikuk1"]
 
 [ext_resource type="MeshLibrary" uid="uid://b5bm3jbrqolvg" path="res://Libraries/SpaceLibrary.tres" id="1_po1k8"]
 [ext_resource type="PackedScene" uid="uid://5auo1c4pgrm5" path="res://Scenes/Enemy/Enemy.tscn" id="2_tpsjm"]
 [ext_resource type="PackedScene" uid="uid://betycinykerlf" path="res://Scenes/Base/Base.tscn" id="3_newdp"]
+[ext_resource type="PackedScene" uid="uid://dnirr3ih3xdcg" path="res://Scenes/RayPickerCamera/RayPickerCamera.tscn" id="4_bhgsg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqh1w"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,9 +41,6 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_tbv72")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5, 9.5)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_po1k8")
@@ -95,10 +93,10 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_tpsjm")]
-transform = Transform3D(0.0274896, 0, -0.999597, 0, 1, 0, 0.999597, 0, 0.0274896, -23.162, 0, 6.19139)
+transform = Transform3D(0.0274896, 0, -0.999596, 0, 1, 0, 0.999596, 0, 0.0274896, -23.162, 0, 6.19139)
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_tpsjm")]
-transform = Transform3D(-0.011645, 0, -0.999907, 0, 1, 0, 0.999907, 0, -0.011645, -18.1627, 0, 6.26419)
+transform = Transform3D(-0.011645, 0, -0.999906, 0, 1, 0, 0.999906, 0, -0.011645, -18.1627, 0, 6.26419)
 progress = 5.0
 
 [node name="Enemy3" parent="Path3D" instance=ExtResource("2_tpsjm")]
@@ -114,3 +112,5 @@ transform = Transform3D(0.0083648, 0, -0.99994, 0, 1, 0, 0.99994, 0, 0.0083648, 
 progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_newdp")]
+
+[node name="RayPickerCamera" parent="." instance=ExtResource("4_bhgsg")]
