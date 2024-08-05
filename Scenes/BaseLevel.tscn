@@ -115,8 +115,9 @@ progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_newdp")]
 
-[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap") instance=ExtResource("4_bhgsg")]
+[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("4_bhgsg")]
 gridmap = NodePath("../GridMap")
+turret_manager = NodePath("../TurretManager")
 
 [node name="TurretManager" type="Node3D" parent="."]
 script = ExtResource("5_xapjd")
