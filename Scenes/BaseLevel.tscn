@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5auo1c4pgrm5" path="res://Scenes/Enemy/Enemy.tscn" id="2_tpsjm"]
 [ext_resource type="PackedScene" uid="uid://betycinykerlf" path="res://Scenes/Base/Base.tscn" id="3_newdp"]
 [ext_resource type="PackedScene" uid="uid://dnirr3ih3xdcg" path="res://Scenes/RayPickerCamera/RayPickerCamera.tscn" id="4_bhgsg"]
-[ext_resource type="Script" path="res://Scenes/TurretManager.gd" id="5_xapjd"]
+[ext_resource type="Script" path="res://Scripts/TurretManager.gd" id="5_xapjd"]
 [ext_resource type="PackedScene" uid="uid://buj7rplqifj5" path="res://Scenes/Turret/Turret.tscn" id="6_rdr20"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqh1w"]
