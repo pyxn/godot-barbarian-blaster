@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://75h7a27ikuk1"]
+[gd_scene load_steps=17 format=3 uid="uid://75h7a27ikuk1"]
 
 [ext_resource type="MeshLibrary" uid="uid://b5bm3jbrqolvg" path="res://Libraries/SpaceLibrary.tres" id="1_po1k8"]
 [ext_resource type="Script" path="res://Scenes/EnemyPath.gd" id="2_2182h"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://buj7rplqifj5" path="res://Scenes/Turret/Turret.tscn" id="6_rdr20"]
 [ext_resource type="Script" path="res://Scenes/Bank.gd" id="8_pr13b"]
 [ext_resource type="PackedScene" uid="uid://5462318omysd" path="res://Scenes/DifficultyManager/DifficultyManager.tscn" id="9_ixxv0"]
+[ext_resource type="PackedScene" uid="uid://t86c7p5ysl5g" path="res://Scenes/UI/VictoryLayer.tscn" id="10_nt5rv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqh1w"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -60,12 +61,12 @@ data = {
 "cells": PackedInt32Array(65535, 65534, 0, 65535, 2, 0, 65531, 65535, 0, 4, 65535, 0, 65531, 65534, 0, 65531, 0, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 4, 1, 0, 4, 2, 0, 3, 2, 0, 4, 0, 0, 4, 65534, 0, 3, 65534, 0, 2, 65534, 0, 1, 65534, 0, 0, 65534, 0, 65534, 65534, 0, 65532, 65534, 0, 65532, 65535, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
 }
 
-[node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("victory_layer", "difficulty_manager")]
+[node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("difficulty_manager", "victory_layer")]
 curve = SubResource("Curve3D_ex7ti")
 script = ExtResource("2_2182h")
-victory_layer = NodePath("../VictoryLayer")
 enemy_scene = ExtResource("2_tpsjm")
 difficulty_manager = NodePath("../DifficultyManager")
+victory_layer = NodePath("../VictoryLayer")
 
 [node name="Road" type="CSGPolygon3D" parent="EnemyPath"]
 polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
@@ -146,16 +147,8 @@ label_settings = SubResource("LabelSettings_xb6a5")
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_ixxv0")]
 
-[node name="VictoryLayer" type="CanvasLayer" parent="."]
+[node name="VictoryLayer" parent="." instance=ExtResource("10_nt5rv")]
 visible = false
-
-[node name="ColorRect" type="ColorRect" parent="VictoryLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.588235)
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]

@@ -1,8 +1,9 @@
 extends Path3D
 
-@export var victory_layer: CanvasLayer
+
 @export var enemy_scene: PackedScene
 @export var difficulty_manager: Node
+@export var victory_layer: CanvasLayer
 @onready var timer: Timer = $Timer
 	
 func _ready() -> void:
