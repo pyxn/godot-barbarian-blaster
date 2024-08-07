@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://betycinykerlf"]
+[gd_scene load_steps=4 format=3 uid="uid://betycinykerlf"]
 
 [ext_resource type="Script" path="res://Scenes/Base/Base.gd" id="1_kchc1"]
+[ext_resource type="PackedScene" uid="uid://1ax4xwrh7jsy" path="res://Assets/Base.glb" id="2_56iiy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xhop"]
 albedo_color = Color(0.996078, 0.0705882, 0.12549, 1)
@@ -11,6 +12,7 @@ script = ExtResource("1_kchc1")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
 radius = 2.0
 height = 4.0
 sides = 32
@@ -22,3 +24,5 @@ billboard = 1
 text = "5"
 font_size = 500
 outline_size = 100
+
+[node name="Base" parent="." instance=ExtResource("2_56iiy")]

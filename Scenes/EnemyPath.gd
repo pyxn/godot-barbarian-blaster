@@ -6,9 +6,6 @@ extends Path3D
 @export var victory_layer: CanvasLayer
 @onready var timer: Timer = $Timer
 	
-func _ready() -> void:
-	Engine.time_scale = 10.0
-	
 func spawn_enemy() -> void:
 	var new_enemy = enemy_scene.instantiate()
 	new_enemy.max_health = difficulty_manager.get_enemy_health()
