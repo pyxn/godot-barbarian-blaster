@@ -5,13 +5,13 @@
 [sub_resource type="Curve" id="Curve_r1rb0"]
 min_value = 0.25
 max_value = 2.0
-_data = [Vector2(0, 2), 0.0, -1.75, 0, 1, Vector2(1, 0.25), -1.75, 0.0, 1, 0]
+_data = [Vector2(0, 2), 0.0, 0.0619728, 0, 0, Vector2(1, 0.25), -3.64172, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_5a7ek"]
 min_value = 10.0
 max_value = 150.0
-_data = [Vector2(0, 10), 0.0, 140.0, 0, 1, Vector2(1, 150), 140.0, 0.0, 1, 0]
+_data = [Vector2(0, 29.9286), 0.0, 120.071, 0, 1, Vector2(1, 150), 120.071, 0.0, 1, 0]
 point_count = 2
 
 [node name="DifficultyManager" type="Node"]

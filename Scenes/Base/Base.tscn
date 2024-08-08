@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://betycinykerlf"]
+[gd_scene load_steps=5 format=3 uid="uid://betycinykerlf"]
 
 [ext_resource type="Script" path="res://Scenes/Base/Base.gd" id="1_kchc1"]
 [ext_resource type="PackedScene" uid="uid://1ax4xwrh7jsy" path="res://Assets/Base.glb" id="2_56iiy"]
+[ext_resource type="FontFile" uid="uid://x02ogdejhule" path="res://Assets/PirataOne-Regular.ttf" id="2_fiv24"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xhop"]
 albedo_color = Color(0.996078, 0.0705882, 0.12549, 1)
@@ -22,6 +23,7 @@ material = SubResource("StandardMaterial3D_0xhop")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
 billboard = 1
 text = "5"
+font = ExtResource("2_fiv24")
 font_size = 500
 outline_size = 100
 
