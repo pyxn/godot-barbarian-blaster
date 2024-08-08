@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn2u6np60w07e"]
+[gd_scene load_steps=9 format=3 uid="uid://cn2u6np60w07e"]
+
+[ext_resource type="PackedScene" uid="uid://or58cm82iltn" path="res://Assets/Tree.glb" id="1_g6q1d"]
+[ext_resource type="PackedScene" uid="uid://cidbgjn1o7l85" path="res://Assets/Rocks.glb" id="2_k6fmy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f6fc"]
-albedo_color = Color(0.572988, 0.572988, 0.572988, 1)
+blend_mode = 1
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uxdl4"]
 material = SubResource("StandardMaterial3D_0f6fc")
@@ -11,7 +15,8 @@ size = Vector3(4, 0.1, 4)
 data = PackedVector3Array(-2, 0.05, 2, 2, 0.05, 2, -2, -0.05, 2, 2, 0.05, 2, 2, -0.05, 2, -2, -0.05, 2, 2, 0.05, -2, -2, 0.05, -2, 2, -0.05, -2, -2, 0.05, -2, -2, -0.05, -2, 2, -0.05, -2, 2, 0.05, 2, 2, 0.05, -2, 2, -0.05, 2, 2, 0.05, -2, 2, -0.05, -2, 2, -0.05, 2, -2, 0.05, -2, -2, 0.05, 2, -2, -0.05, -2, -2, 0.05, 2, -2, -0.05, 2, -2, -0.05, -2, 2, 0.05, 2, -2, 0.05, 2, 2, 0.05, -2, -2, 0.05, 2, -2, 0.05, -2, 2, 0.05, -2, -2, -0.05, 2, 2, -0.05, 2, -2, -0.05, -2, 2, -0.05, 2, 2, -0.05, -2, -2, -0.05, -2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvghg"]
-albedo_color = Color(0.878431, 0.298039, 0.227451, 1)
+transparency = 1
+albedo_color = Color(0.878431, 0.298039, 0.227451, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_07e6n"]
 material = SubResource("StandardMaterial3D_hvghg")
@@ -31,9 +36,16 @@ mesh = SubResource("BoxMesh_uxdl4")
 shape = SubResource("ConcavePolygonShape3D_t84r3")
 
 [node name="TurretBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 mesh = SubResource("BoxMesh_07e6n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TurretBase"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TurretBase/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_734a3")
+
+[node name="Tree" parent="." instance=ExtResource("1_g6q1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Rocks" parent="." instance=ExtResource("2_k6fmy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
